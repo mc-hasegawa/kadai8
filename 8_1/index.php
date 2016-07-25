@@ -26,7 +26,7 @@ if (isset($_POST["posting_content"]))
 $file_line_data = fopen("lesson.bbs", "r");
 $response_count = 0;
 $file_line_num = 0;
-$RESPONSE_SHOW_LIMIT = 10;
+define("RESPONSE_SHOW_LIMIT",10);
 
 while (($file_buffer = fgets($file_line_data, 4096)) !== false)
 {
@@ -37,7 +37,7 @@ while (($file_buffer = fgets($file_line_data, 4096)) !== false)
 	$file_line_num++;
 }
 rewind($file_line_data);
-if ($RESPONSE_SHOW_LIMIT < $response_count)	//ログ削除処理
+if (RESPONSE_SHOW_LIMIT < $response_count)	//ログ削除処理
 {
 	$edit_file = file("lesson.bbs");
 	$delete_count = 0;
@@ -50,7 +50,7 @@ if ($RESPONSE_SHOW_LIMIT < $response_count)	//ログ削除処理
 		unset($edit_file[$delete_count]);
 		$delete_count++;
 		$file_line_num--;
-		if ($response_count == $RESPONSE_SHOW_LIMIT)
+		if ($response_count == RESPONSE_SHOW_LIMIT)
 		{
 			break;
 		}
@@ -73,7 +73,7 @@ function posting_check()
 	}
 	else
 	{
-		document.posting_form.posting_button.disabled = "";
+		document.posting_form.poting_button.disabled = "";
 	}
 }
 </script>
