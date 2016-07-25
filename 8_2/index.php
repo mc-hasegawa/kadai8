@@ -1,8 +1,9 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
+date_default_timezone_set('Asia/Tokyo');
 require "mail_sender.php";
 $file = fopen("lesson.bbs", "r+");
-$unix_time = time()+(9 * 60 * 60);
+$unix_time = time()
 $show_time = date('Y/m/d H:i:s',$unix_time);
 if (isset($_POST["posting_content"]))
 {
