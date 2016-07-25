@@ -31,7 +31,7 @@ if (isset($_POST["posting_content"]))
 		}
 		else
 		{
-			if (date('a') == 'am')
+			if (date('a',$unix_time) == 'am')
 			{
 				$ampm = '午前';
 			}
