@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=UTF-8');
 require "mail_sender.php";
 $file = fopen("lesson.bbs", "r+");
-$unix_time = time()+(7 * 60 * 60);
+$unix_time = time()+(9 * 60 * 60);
 $show_time = date('Y/m/d H:i:s',$unix_time);
 if (isset($_POST["posting_content"]))
 {
